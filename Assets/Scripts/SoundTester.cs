@@ -3,13 +3,13 @@ using System.Collections;
 
 public class SoundTester : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource _audioSource;
 
     void Update ()
     {
         foreach (var touch in Input.touches) {
             if (touch.phase == TouchPhase.Began) {
-                audioSource.Play();
+                _audioSource.Play();
                 break;
             }
         }
@@ -17,9 +17,9 @@ public class SoundTester : MonoBehaviour
 
     void Reset()
     {
-        if (audioSource == null)
+        if (_audioSource == null)
         {
-            audioSource = GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();
         }
     }
 }

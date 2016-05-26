@@ -8,10 +8,10 @@ namespace Supyrb
     [RequireComponent(typeof(Text))]
 	public class SystemInfoText : MonoBehaviour
     {
-        private Text text;
+        private Text _text;
         void Start () 
 		{
-            text = GetComponent<Text>();
+            _text = GetComponent<Text>();
             UpdateInfoText();
 		}
 
@@ -30,7 +30,7 @@ namespace Supyrb
             infoText += "Resolution: " + Screen.width + " x " + Screen.height + "\n";
             infoText += "UDID: " + SystemInfo.deviceUniqueIdentifier;
 
-            text.text = infoText;
+            _text.text = infoText;
         }
 	}
 }
