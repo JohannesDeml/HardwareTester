@@ -4,7 +4,7 @@ MobileTester
 A simple app for testing Unity mobile features. 
 This app should help evaluating possibilities of the accelerometer and gyroscope.
 
-![screenshot](http://i.imgur.com/vQm62CF.png?1)
+![screenshot](http://i.imgur.com/rAShjkY.png?1)
 
 System Requirements
 -------------------
