@@ -17,6 +17,6 @@ Features
 - System information display.
 - Touch point indicator (multi-touch capable).
 - Gyroscope attitude indicator with axis toggles.
-- Accelorometer reference indicator with axis toggles.
+- Accelerometer reference indicator with axis toggles.
 - Vibration test.
 - Plays sound on touches (for audio latency test).
