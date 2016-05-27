@@ -1,9 +1,10 @@
 MobileTester
 ============
 
-A simple app for testing Unity mobile features.
+A simple app for testing Unity mobile features. 
+This app should help evaluating possibilities of the accelerometer and gyroscope.
 
-![screenshot](http://i.imgur.com/5HSvXND.png?1)
+![screenshot](http://i.imgur.com/vQm62CF.png?1)
 
 System Requirements
 -------------------
@@ -15,7 +16,7 @@ Features
 
 - System information display.
 - Touch point indicator (multi-touch capable).
-- Gyroscope attitude indicator.
-- Accelorometer reference indicator.
+- Gyroscope attitude indicator with axis toggles.
+- Accelorometer reference indicator with axis toggles.
 - Vibration test.
 - Plays sound on touches (for audio latency test).
