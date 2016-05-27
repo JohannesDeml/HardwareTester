@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AccelorometerTester.cs" company="Supyrb">
+// <copyright file="AccelerometerTester.cs" company="Supyrb">
 //   Copyright (c) 2016 Supyrb. All rights reserved.
 // </copyright>
 // <author>
@@ -12,35 +12,35 @@ namespace Supyrb
 	using UnityEngine;
 	using System.Collections;
 
-	public class AccelorometerTester : MonoBehaviour 
+	public class AccelerometerTester : MonoBehaviour 
 	{
-	    [SerializeField] private bool RotationX = true;
-	    [SerializeField] private bool RotationY = true;
-	    [SerializeField] private bool RotationZ = true;
+	    [SerializeField] private bool _rotationX = true;
+	    [SerializeField] private bool _rotationY = true;
+	    [SerializeField] private bool _rotationZ = true;
 
 
 	    void FixedUpdate ()
 		{
-		    Vector3 euler = Vector3.zero;
-            if(RotationX) { euler.x = -Input.acceleration.y * 90f; }
-            if(RotationY) { euler.y = Input.acceleration.x * 90f; }
-            if(RotationZ) { euler.z = Input.acceleration.z * 90f; }
+            Vector3 euler = Vector3.zero;
+            if(_rotationX) { euler.x = -Input.acceleration.y * 90f; }
+            if(_rotationY) { euler.y = Input.acceleration.x * 90f; }
+            if(_rotationZ) { euler.z = Input.acceleration.z * 90f; }
             transform.localEulerAngles = euler;
 		}
 
-	    public void RotationXEnabled(bool allowRotation)
+        public void RotationXEnabled(bool allowRotation)
         {
-            RotationX = allowRotation;
+            _rotationX = allowRotation;
         }
 
 	    public void RotationYEnabled(bool allowRotation)
         {
-            RotationY = allowRotation;
+            _rotationY = allowRotation;
         }
 
 	    public void RotationZEnabled(bool allowRotation)
         {
-            RotationZ = allowRotation;
+            _rotationZ = allowRotation;
         }
 	}
 }

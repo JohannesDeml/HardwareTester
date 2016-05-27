@@ -3,7 +3,8 @@ using System.Collections;
 
 public class TouchTester : MonoBehaviour
 {
-    public Texture2D texture;
+    [Range(0f, 1f), SerializeField] private float _touchSizeWidthPercentage = 0.33f;
+    public Texture2D Texture;
 
     void Update ()
     {
@@ -16,9 +17,9 @@ public class TouchTester : MonoBehaviour
     
     void OnGUI ()
     {
-        var size = Screen.width / 2;
+        var size = Screen.width * _touchSizeWidthPercentage;
         foreach (var touch in Input.touches) {
-            GUI.DrawTexture (new Rect (touch.position.x - size / 2, Screen.height - touch.position.y - size / 2, size, size), texture);
+            GUI.DrawTexture (new Rect (touch.position.x - size / 2, Screen.height - touch.position.y - size / 2, size, size), Texture);
         }
     }
 }
