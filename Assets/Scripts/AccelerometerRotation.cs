@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AccelerometerTester.cs" company="Supyrb">
+// <copyright file="AccelerometerRotation.cs" company="Supyrb">
 //   Copyright (c) 2016 Supyrb. All rights reserved.
 // </copyright>
 // <author>
@@ -12,7 +12,7 @@ namespace Supyrb
 	using UnityEngine;
 	using System.Collections;
 
-	public class AccelerometerTester : MonoBehaviour 
+	public class AccelerometerRotation : MonoBehaviour 
 	{
 	    [SerializeField] private bool _rotationX = true;
 	    [SerializeField] private bool _rotationY = true;

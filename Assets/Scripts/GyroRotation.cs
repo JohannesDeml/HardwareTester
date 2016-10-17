@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GyroTester : MonoBehaviour
+public class GyroRotation : MonoBehaviour
 {
     [SerializeField] private bool _rotationX = true;
     [SerializeField] private bool _rotationY = true;
