@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using System.Text;
+using UnityEngine.UI;
 
 namespace Supyrb
 {
@@ -8,29 +9,58 @@ namespace Supyrb
     [RequireComponent(typeof(Text))]
 	public class SystemInfoText : MonoBehaviour
     {
-        private Text _text;
+        [SerializeField]
+        private Text text;
+
+        private StringBuilder sb;
         void Start () 
 		{
-            _text = GetComponent<Text>();
+            sb = new StringBuilder();
             UpdateInfoText();
 		}
 
         private void UpdateInfoText()
         {
-            var infoText = "";
-            infoText += "Device Name: " + SystemInfo.deviceName + "\n";
-            infoText += "Device Type: " + SystemInfo.deviceType + "\n";
-            infoText += "Model Name: " + SystemInfo.deviceModel + "\n";
-            infoText += "OS: " + SystemInfo.operatingSystem + "\n";
-            infoText += "CPU: " + SystemInfo.processorType + " x " + SystemInfo.processorCount + "\n";
-            infoText += "Memory: " + SystemInfo.systemMemorySize.ToString("#,0") + "kB (VRAM:" + SystemInfo.graphicsMemorySize.ToString("#,0") + "kB)\n";
-            infoText += "GPU: " + SystemInfo.graphicsDeviceName + " (ID:" + SystemInfo.graphicsDeviceID + ")\n";
-            infoText += "Vendor: " + SystemInfo.graphicsDeviceVendor + " (ID:" + SystemInfo.graphicsDeviceVendorID + ")\n";
-            infoText += "Driver: " + SystemInfo.graphicsDeviceVersion + " (SM:" + SystemInfo.graphicsShaderLevel + ")\n";
-            infoText += "Resolution: " + Screen.width + " x " + Screen.height + "\n";
-            infoText += "UDID: " + SystemInfo.deviceUniqueIdentifier;
+            sb.Append("Device Name: ");
+            sb.AppendLine(SystemInfo.deviceName);
+            sb.Append("Device Type: ");
+            sb.AppendLine(SystemInfo.deviceType.ToString());
+            sb.Append("Model Name: ");
+            sb.AppendLine(SystemInfo.deviceModel);
+            sb.Append("OS: ");
+            sb.AppendLine(SystemInfo.operatingSystem);
+            sb.Append("System language: ");
+            sb.AppendLine(Application.systemLanguage.ToString());
+            sb.Append("CPU: ");
+            sb.Append(SystemInfo.processorType + " x " + SystemInfo.processorCount);
+            sb.Append(" @ ");
+            sb.AppendLine(SystemInfo.processorFrequency + "MHz");
+            sb.Append("Memory: ");
+            sb.Append(SystemInfo.systemMemorySize.ToString("#,0"));
+            sb.AppendLine("kB (VRAM:" + SystemInfo.graphicsMemorySize.ToString("#,0") + "kB)");
+            sb.Append("GPU: ");
+            sb.AppendLine(SystemInfo.graphicsDeviceName + " (ID:" + SystemInfo.graphicsDeviceID + ")");
+            sb.Append("Supported shader model: ");
+            sb.AppendLine(SystemInfo.graphicsShaderLevel.ToString());
+            sb.Append("Vendor: ");
+            sb.AppendLine(SystemInfo.graphicsDeviceVendor + " (ID:" + SystemInfo.graphicsDeviceVendorID + ")");
+            sb.Append("Driver: ");
+            sb.AppendLine(SystemInfo.graphicsDeviceVersion + " (SM:" + SystemInfo.graphicsShaderLevel + ")");
+            sb.Append("Resolution: ");
+            sb.AppendLine(Screen.width + " x " + Screen.height);
+            sb.Append("UDID: ");
+            sb.AppendLine(SystemInfo.deviceUniqueIdentifier);
+            
 
-            _text.text = infoText;
+            text.text = sb.ToString();
+        }
+
+        void Reset()
+        {
+            if (text == null)
+            {
+                text = GetComponent<Text>();
+            }
         }
 	}
 }
