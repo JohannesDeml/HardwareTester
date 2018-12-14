@@ -1,7 +1,7 @@
 MobileTester
 ============
 
-A simple app for testing Unity mobile features. 
+A mobile app for testing Unity hardware features on mobile devices. 
 This app should help evaluating possibilities of the accelerometer and gyroscope.
 
 ![screenshot](http://i.imgur.com/rAShjkY.png?1)
@@ -9,7 +9,8 @@ This app should help evaluating possibilities of the accelerometer and gyroscope
 System Requirements
 -------------------
 
-- Unity 5.1 or later versions
+- Unity 2018.2 or later (Could be downgraded until Unity 5.1 if necessary)
+- Android 4.1 or later
 
 Features
 --------
@@ -20,3 +21,5 @@ Features
 - Accelerometer reference indicator with axis toggles.
 - Vibration test.
 - Plays sound on touches (for audio latency test).
+
+[Get the latest Release](https://github.com/JohannesDeml/HardwareTester/releases/latest)
